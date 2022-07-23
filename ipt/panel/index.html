@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Egret Inspector</title>
+    <link href="style/devtool.css" rel="stylesheet" />
+    <script src="../lib/jquery-2.1.1.min.js"></script>
+    <script src="scripts/Loader.js"></script>
+</head>
+<body>
+    <div class="egret-dev-panel" style="width:100%">
+        <div class="left">
+            <div id="profile">
+                <canvas id="fpsChart" height="50" width="300"></canvas>
+                <span id="fps">60</span>fps
+            </div>
+            <div class="controls" id="control">
+                <label><input type="checkbox" id="chkPreventTouch" value="" /> 阻止点击</label>
+                <label><input type="checkbox" id="chkHighlightHover" value="" /> 高亮划过对象</label>
+                <label><input type="checkbox" id="chkHighlightClick" checked="checked" value="" /> 选中点击对象</label>
+                <img id="refreshTree" class="refresh" src="style/refresh.png" title="刷新" />
+            </div>
+            <div id="nodes" class="nodes">
+                <div class="display-object">
+                    <div class="parent">
+                        <span class="icon">{icon}</span>
+                        <span class="node"><span class="memberName">{memberName}</span> {name} </span>
+                        <input type="checkbox" class="toggle" value="" />
+                    </div>
+                    <div class="children">
+                    </div>
+                </div>
+            </div>
+            <div id="searchBar">
+                <form id="searchForm" action="/" method="get">
+                    <input type="text" id="txtSearchName" name="name" value="" placeholder="name,hashCode (ctrl|cmd+shift+f)" autocomplete="off" />
+                </form>
+            </div>
+        </div>
+        <div class="handle-v handle">
+        </div>
+        <div class="right">
+            <div class="header monospace" id="propHeader">
+                <div class="controls">
+                    <label>
+                        <input type="checkbox" id="showMethods" /> 列出方法
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="showPrivate" /> 私有属性
+                    </label>
+                    <img id="refreshProps" class="refresh" src="style/refresh.png" title="刷新" />
+                </div>
+            </div>
+            <div id="props" class="props">
+                <ol class="properties">
+                    <li class="property">
+                        <span class="icon">{icon}</span>
+                        <span class="getter"></span>
+                        <span class="name">{name}</span>
+                        <span class="separator">:</span>
+                        <span class="value">{value}</span>
+                    </li>
+                </ol>
+            </div>
+            <div class="header monospace" id="searchProp">
+                <input type="text" id="txtSearchProp" value="" placeholder="ctrl|cmd+f" autocomplete="off" />
+            </div>
+        </div>
+    </div>
+
+
+    <div id="changes">
+        <h2>Egret Inspector 2.5.4</h2>
+        <h3>支持 Egret 2.5 版本</h3>
+        <h3>高亮划过对象</h3>
+        <ul>
+            <li>在 Egret 2.4 及以上版本中，高亮划过对象功能需要在移动鼠标时请按下 <strong>鼠标左键</strong> 来查看显示对象</li>
+        </ul>
+        <h3>优化 Container 对象高亮效果</h3>
+        <h3>支持 publish 后的项目</h3>
+        <button class="close">关闭</button>
+    </div>
+
+</body>
+</html>
